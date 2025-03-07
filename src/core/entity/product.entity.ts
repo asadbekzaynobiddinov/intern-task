@@ -1,6 +1,7 @@
-import { Entity, Column, ManyToOne } from 'typeorm';
+import { Entity, Column, ManyToOne, OneToOne } from 'typeorm';
 import { BaseEntity } from 'src/common/database';
 import { Category } from './category.entity';
+import { Basket } from './basket.entity';
 
 @Entity()
 export class Product extends BaseEntity {
@@ -20,4 +21,7 @@ export class Product extends BaseEntity {
     onDelete: 'CASCADE',
   })
   category: Category;
+
+  @OneToOne(() => Basket, (basket) => basket.product)
+  basket: Basket;
 }

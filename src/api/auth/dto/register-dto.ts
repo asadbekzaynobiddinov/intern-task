@@ -1,4 +1,5 @@
-import { IsString } from 'class-validator';
+import { IsString, IsOptional } from 'class-validator';
+import { UserRoles } from 'src/common/enum';
 
 export class RegisterDto {
   @IsString()
@@ -6,4 +7,7 @@ export class RegisterDto {
 
   @IsString()
   password: string;
+
+  @IsOptional()
+  role: UserRoles;
 }

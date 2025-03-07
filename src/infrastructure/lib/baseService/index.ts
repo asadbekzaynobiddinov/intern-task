@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unsafe-assignment */
 import { HttpException } from '@nestjs/common';
 import { Repository } from 'typeorm';
 import { IFindOptions } from './interface';
